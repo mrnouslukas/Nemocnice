@@ -1,0 +1,24 @@
+﻿@using Hospital.DTO
+@model PatientDto
+<h4>Create a new patient</h4>
+<form asp-controller="Patients" asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="InsuranceNumbeer"></label>
+        <input type="number" asp-for="InsuranceNumbeer" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfBirth"></label>
+        <input type="date" asp-for="DateOfBirth" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Nationality"></label>
+        <input type="text" asp-for="Nationality" class="form-control" />
+    </div>
+    <div>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </div>
+</form>

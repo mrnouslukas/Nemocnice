@@ -1,0 +1,20 @@
+﻿@using Hospital.DTO
+@model IEnumerable<PatientDto>
+<h1>List of all patients</h1>
+@foreach (var item in Model) {
+    <div class="border border-1 border-dark p-2 ">
+        <h5>@item.Name </h5>
+        Id: @item.Id
+        <p>Date of Birth: @item.DateOfBirth.ToShortDateString()</p>
+        <p>Insurance Number: @item.InsuranceNumbeer</p>
+        <p>Nationality: @item.Nationality</p>
+        <a class="btn btn-warning" asp-action="Edit" asp-route-id=@item.Id>Edit</a>
+        <form style="display:inline" method="post">
+            <input class="btn btn-danger" asp-action="Delete" asp-route-id=@item.Id type="submit" value="Delete" />
+        </form>
+    </div>
+}
+<hr />
+<div>
+    <a class="btn btn-success" asp-action="Create">Create</a>
+</div>

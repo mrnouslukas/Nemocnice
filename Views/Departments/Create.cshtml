@@ -1,0 +1,17 @@
+﻿@using Hospital.DTO
+@model DepartmentDto
+<form asp-action="Create">
+<div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-success" value="Create"/>
+</form>
+
+@section Scripts {
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}

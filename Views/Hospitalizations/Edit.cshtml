@@ -1,0 +1,23 @@
+﻿@using Hospital.DTO;
+@model HospitalizationDto;
+<div>
+    <form asp-action="Edit">
+        <h4>Edit a new hospitalization</h4>
+        <div class="form-group">
+            <label class="control-label" asp-for="PatientId"></label>
+            <select class="form-control" asp-for="PatientId" asp-items="ViewBag.Patients"></select>
+
+            <label class="control-label" asp-for="DepartmentId"></label>
+            <select class="form-control" asp-for="DepartmentId" asp-items="ViewBag.Departments" ></select>
+
+            <label asp-for="Description"></label>
+            <input type="text" asp-for="Description" placeholder="What was examined" class="form-control" />
+
+            <label asp-for="DayOfHospiptalization"></label>
+            <input type="date" asp-for="DayOfHospiptalization" placeholder="Date" class="form-control" />
+        </div>
+        <div>
+            <input class="btn btn-success" type="submit" value="Save changes" />
+        </div>
+    </form>
+</div>

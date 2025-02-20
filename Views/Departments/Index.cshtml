@@ -1,0 +1,14 @@
+﻿@using Hospital.DTO
+@model IEnumerable<DepartmentDto>
+<h1>List of departments</h1>
+<a class="btn btn-info my-2" asp-action="Create">Create</a>
+@foreach (var item in Model) {
+    <div class="border border-dark p-2">
+        <h5>@item.Name</h5>
+        <p>@item.Id</p>
+            <a class="btn btn-warning" asp-action="Update" asp-route-id="@item.Id">Edit</a>
+            <form style="display:inline" method="post">
+                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+            </form>
+    </div>
+}

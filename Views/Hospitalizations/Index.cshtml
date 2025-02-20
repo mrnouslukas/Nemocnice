@@ -1,0 +1,28 @@
+﻿@using Hospital.ViewModels
+@model IEnumerable<HospitalizationsVM>
+<h1>List of all hospitalizations</h1>
+<div>
+    <a class="btn btn-success" asp-controller="Hospitalizations" asp-action="Create">
+        Add a new hospitalization
+    </a>
+</div>
+<hr />
+@foreach (var item in Model) {
+    <div class="border border-1 border-dark p-2">
+        <p>@item.PatientName </p>
+        <p>
+            @item.DepartmentName: @item.Description  <br>
+            @item.DateOfHospitalization.ToShortDateString()
+        </p>
+        <div class="p-2">
+            <a class="btn btn-warning" asp-controller="Hospitalizations" asp-action="Edit"
+               asp-route-id="@item.Id">Edit</a>
+            <form style="display:inline" method="post">
+                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Hospitalizations"
+                        asp-route-id="@item.Id">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+}
